@@ -43,4 +43,9 @@ describe("Bowling Game Test", () => {
     rollAllSame(game, 16, 0);
     assert.strictEqual(game.score(), 24);
   });
+  it("calculates the score correctly for a perfect game", () => {
+    const game = new BowlingGame();
+    rollAllSame(game, 12, 10);
+    assert.strictEqual(game.score(), 300);
+  });
 });
