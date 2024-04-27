@@ -8,6 +8,11 @@ function rollAllSame(game, numberOfRolls, scoreEachRoll) {
   }
 }
 
+function rollSpare(game) {
+  game.roll(5);
+  game.roll(5);
+}
+
 describe("Bowling Game Test", () => {
   it("calculates a gutter game correctly", () => {
     const game = new BowlingGame();
@@ -21,8 +26,7 @@ describe("Bowling Game Test", () => {
   });
   it("calculates a game with one spare correctly", () => {
     const game = new BowlingGame();
-    game.roll(5);
-    game.roll(5); // spare
+    rollSpare(game);
     game.roll(3);
     rollAllSame(game, 17, 0);
     assert.strictEqual(game.score(), 16);

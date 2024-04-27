@@ -9,8 +9,7 @@ exports.BowlingGame = class {
     let score = 0;
     let frameIndex = 0;
     for (let frame = 0; frame < 10; frame++) {
-      // spare
-      if (this.rolls[frameIndex] + this.rolls[frameIndex + 1] === 10) {
+      if (this.isSpare(frameIndex)) {
         score +=
           this.rolls[frameIndex] +
           this.rolls[frameIndex + 1] +
@@ -21,5 +20,9 @@ exports.BowlingGame = class {
       frameIndex += 2;
     }
     return score;
+  }
+
+  isSpare(frameIndex) {
+    return this.rolls[frameIndex] + this.rolls[frameIndex + 1] === 10;
   }
 };
