@@ -13,6 +13,10 @@ function rollSpare(game) {
   game.roll(5);
 }
 
+function rollStrike(game) {
+  game.roll(10);
+}
+
 describe("Bowling Game Test", () => {
   it("calculates a gutter game correctly", () => {
     const game = new BowlingGame();
@@ -33,7 +37,7 @@ describe("Bowling Game Test", () => {
   });
   it("calculates a game with one strike correctly", () => {
     const game = new BowlingGame();
-    game.roll(10);
+    rollStrike(game);
     game.roll(3);
     game.roll(4);
     rollAllSame(game, 16, 0);
