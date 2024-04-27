@@ -1,0 +1,11 @@
+{
+  "name": "simple-bowling-game",
+  "version": "1.0.0",
+  "description": "Use inbuilt node test runner and TDD to complete the classic simple bowling game kata",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "author": "",
+  "license": "ISC"
+}
